@@ -1,0 +1,3 @@
+rootProject.name='StoriesProgressViewForPagerExample'
+include ':app'
+include ':storiesprogressviewforpager'
