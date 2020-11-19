@@ -24,6 +24,7 @@ final class PausableProgressBar extends FrameLayout {
     private PausableScaleAnimation animation;
     private long duration = DEFAULT_PROGRESS_DURATION;
     private Callback callback;
+    private int colorProgress = R.color.progress_secondary;
 
     interface Callback {
         void onStartProgress();

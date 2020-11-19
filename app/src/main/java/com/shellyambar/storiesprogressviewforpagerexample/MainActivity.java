@@ -20,7 +20,12 @@ public class MainActivity extends AppCompatActivity implements StoriesProgressVi
 
     private int counter = 0;
     private final int[] resources = new int[]{
-
+            R.drawable.sample1,
+            R.drawable.sample2,
+            R.drawable.sample3,
+            R.drawable.sample4,
+            R.drawable.sample5,
+            R.drawable.sample6,
     };
 
     private final long[] durations = new long[]{
@@ -36,7 +41,6 @@ public class MainActivity extends AppCompatActivity implements StoriesProgressVi
             switch (event.getAction()) {
                 case MotionEvent.ACTION_DOWN:
                     pressTime = System.currentTimeMillis();
-
                     return false;
                 case MotionEvent.ACTION_UP:
                     long now = System.currentTimeMillis();
@@ -101,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements StoriesProgressVi
     @Override
     public void onComplete() {
         Log.d("","");
-        storiesProgressView.setComplete(false);
     }
 
     @Override
