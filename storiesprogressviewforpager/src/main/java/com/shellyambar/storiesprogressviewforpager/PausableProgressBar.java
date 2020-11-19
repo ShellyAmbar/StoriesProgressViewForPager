@@ -16,9 +16,6 @@ import androidx.annotation.Nullable;
 
 final class PausableProgressBar extends FrameLayout {
 
-    /***
-     * progress満了タイマーのデフォルト時間
-     */
     private static final int DEFAULT_PROGRESS_DURATION = 2000;
 
     private View frontProgressView;
@@ -165,18 +162,14 @@ final class PausableProgressBar extends FrameLayout {
             return super.getTransformation(currentTime, outTransformation, scale);
         }
 
-        /***
-         * pause animation
-         */
+
         void pause() {
             if (mPaused) return;
             mElapsedAtPause = 0;
             mPaused = true;
         }
 
-        /***
-         * resume animation
-         */
+
         void resume() {
             mPaused = false;
         }

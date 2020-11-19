@@ -24,9 +24,7 @@ public class StoriesProgressView extends LinearLayout {
     private final List<PausableProgressBar> progressBars = new ArrayList<>();
 
     private int storiesCount = -1;
-    /**
-     * pointer of running animation
-     */
+
     private int current = -1;
     private StoriesListener storiesListener;
     boolean isComplete;
@@ -96,21 +94,13 @@ public class StoriesProgressView extends LinearLayout {
         return v;
     }
 
-    /**
-     * Set story count and create views
-     *
-     * @param storiesCount story count
-     */
+
     public void setStoriesCount(int storiesCount) {
         this.storiesCount = storiesCount;
         bindViews();
     }
 
-    /**
-     * Set storiesListener
-     *
-     * @param storiesListener StoriesListener
-     */
+
     public void setStoriesListener(StoriesListener storiesListener) {
         this.storiesListener = storiesListener;
     }
@@ -122,10 +112,6 @@ public class StoriesProgressView extends LinearLayout {
     public void setComplete(boolean complete) {
         isComplete = complete;
     }
-
-    /**
-     * Skip current story
-     */
 
 
     public void skip() {
@@ -161,11 +147,7 @@ public class StoriesProgressView extends LinearLayout {
         }
     }
 
-    /**
-     * Set stories count and each story duration
-     *
-     * @param durations milli
-     */
+
     public void setStoriesCountWithDurations(@NonNull long[] durations) {
         storiesCount = durations.length;
         bindViews();
@@ -209,16 +191,11 @@ public class StoriesProgressView extends LinearLayout {
         };
     }
 
-    /**
-     * Start progress animation
-     */
+
     public void startStories() {
         progressBars.get(0).startProgress();
     }
 
-    /**
-     * Start progress animation from specific progress
-     */
     public void startStories(int from) {
         for (int i = 0; i < from; i++) {
             progressBars.get(i).setMaxWithoutCallback();
@@ -226,26 +203,20 @@ public class StoriesProgressView extends LinearLayout {
         progressBars.get(from).startProgress();
     }
 
-    /**
-     * Need to call when Activity or Fragment destroy
-     */
+
     public void destroy() {
         for (PausableProgressBar p : progressBars) {
             p.clear();
         }
     }
 
-    /**
-     * Pause story
-     */
+
     public void pause() {
         if (current < 0) return;
         progressBars.get(current).pauseProgress();
     }
 
-    /**
-     * Resume story
-     */
+
     public void resume() {
         if (current < 0) return;
         progressBars.get(current).resumeProgress();
