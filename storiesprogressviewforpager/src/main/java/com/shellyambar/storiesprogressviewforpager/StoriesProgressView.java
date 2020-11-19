@@ -183,7 +183,7 @@ public class StoriesProgressView extends LinearLayout {
                     if (storiesListener != null) storiesListener.onNext();
                     progressBars.get(next).startProgress();
                 } else {
-                    isComplete = true;
+                 //   isComplete = true;
                     if (storiesListener != null) storiesListener.onComplete();
                 }
                 isSkipStart = false;
